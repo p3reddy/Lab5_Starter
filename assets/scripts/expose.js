@@ -37,7 +37,8 @@ function init() {
       const jsConfetti = new JSConfetti()
       jsConfetti.addConfetti()
     }
-    audio.play();
+    if (horn_select.value != "selected")
+      audio.play();
   })
 
 }
