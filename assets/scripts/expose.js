@@ -1,11 +1,15 @@
 // expose.js
 
+const jsConfetti = new JSConfetti()
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   const horn_select = document.getElementById("horn-select");
   const sound_image = document.querySelector("#expose > img");
   const audio = document.querySelector("audio");
+
+  sound_image.src = `./assets/images/${horn_select.value}.svg`;
+  audio.src = `./assets/audio/${horn_select.value}.mp3`;
 
   console.log(`assets/images/.png`)
 
@@ -34,7 +38,6 @@ function init() {
   const play_button = document.querySelector("button");
   play_button.addEventListener("click", () => {
     if (horn_select.value === "party-horn") {
-      const jsConfetti = new JSConfetti()
       jsConfetti.addConfetti()
     }
     if (horn_select.value != "selected")
